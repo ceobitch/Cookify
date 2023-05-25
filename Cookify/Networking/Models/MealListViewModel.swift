@@ -11,25 +11,23 @@ class MealListViewModel: ObservableObject {
     @Published var meals = [Meal]()
     
     func fetchMeals() {
-        guard let url = URL(string: "\(API.base)filter.php?c=Dessert") else {
+        guard let url = API.getMealListURL() else {
             print("Invalid URL")
             return
         }
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             let decoder = JSONDecoder()
-            
+
             if let data = data {
                 do {
                     let response = try decoder.decode(MealsResponse.self, from: data)
                     DispatchQueue.main.async {
-                        // ** Here we are trying to filter the null
-                        // values as requested in the assigment
-                        self.meals = response.meals.filter {
-                            $0.idMeal != nil &&
-                            $0.strMeal != nil &&
-                            $0.strMealThumb != nil
-                        }
+                        // 🔔 Here we are trying to filter the null vlaues
+                        // 🔔 We also are going to sort them A-Z
+                        self.meals = response.meals
+                            .filter { $0.idMeal != nil && $0.strMeal != nil && $0.strMealThumb != nil }
+                            .sorted { $0.strMeal! < $1.strMeal! }
                     }
                 } catch {
                     print("Failed to decode JSON")
@@ -39,5 +37,6 @@ class MealListViewModel: ObservableObject {
             }
         }.resume()
     }
+
 }
 
