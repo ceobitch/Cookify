@@ -29,7 +29,6 @@ To run the Cookify app locally, follow these steps:
 
 Cookify uses the following dependencies:
 
-- Alamofire: A popular networking library for making API requests.
 - URLImage: A Swift package for asynchronous image loading.
 
 These dependencies are managed using Swift Package Manager and are automatically resolved when you build the project.
