@@ -11,9 +11,7 @@ Cookify is an iOS app that allows users to browse and discover delicious dessert
 
 ## Preview
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
-![Screenshot 3](screenshots/screenshot3.png)
+![Cookify Preview](preview.gif)
 
 ## Getting Started
 
