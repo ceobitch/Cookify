@@ -21,6 +21,7 @@ struct MealDetailView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(height: 200)
+                            .cornerRadius(50)
                             .clipped()
                     }
                     .padding(.bottom, 8)
