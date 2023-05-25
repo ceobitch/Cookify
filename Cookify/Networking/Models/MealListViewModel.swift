@@ -23,7 +23,13 @@ class MealListViewModel: ObservableObject {
                 do {
                     let response = try decoder.decode(MealsResponse.self, from: data)
                     DispatchQueue.main.async {
-                       
+                        // ** Here we are trying to filter the null
+                        // values as requested in the assigment
+                        self.meals = response.meals.filter {
+                            $0.idMeal != nil &&
+                            $0.strMeal != nil &&
+                            $0.strMealThumb != nil
+                        }
                     }
                 } catch {
                     print("Failed to decode JSON")
