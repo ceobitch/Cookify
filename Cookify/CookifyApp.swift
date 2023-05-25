@@ -11,7 +11,7 @@ import SwiftUI
 struct CookifyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MealListView()
         }
     }
 }

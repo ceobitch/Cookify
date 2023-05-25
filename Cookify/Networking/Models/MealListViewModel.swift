@@ -9,10 +9,12 @@ import Foundation
 
 class MealListViewModel: ObservableObject {
     @Published var meals = [Meal]()
-    
+    @Published var isLoading = false
     func fetchMeals() {
+        isLoading = true
         guard let url = API.getMealListURL() else {
             print("Invalid URL")
+            
             return
         }
 
@@ -28,6 +30,7 @@ class MealListViewModel: ObservableObject {
                         self.meals = response.meals
                             .filter { $0.idMeal != nil && $0.strMeal != nil && $0.strMealThumb != nil }
                             .sorted { $0.strMeal! < $1.strMeal! }
+                        self.isLoading = false
                     }
                 } catch {
                     print("Failed to decode JSON")
@@ -39,4 +42,3 @@ class MealListViewModel: ObservableObject {
     }
 
 }
-

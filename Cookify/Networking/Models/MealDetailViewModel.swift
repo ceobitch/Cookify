@@ -9,13 +9,13 @@ import Foundation
 
 class MealDetailViewModel: ObservableObject {
     @Published var mealDetail: MealDetail?
-    
+
     func fetchMealDetail(id: String) {
-        guard let url = URL(string: "\(API.base)lookup.php?i=\(id)") else {
+        guard let url = API.getMealDetailURL(id: id) else {
             print("Invalid URL")
             return
         }
-
+        
         URLSession.shared.dataTask(with: url) { data, response, error in
             let decoder = JSONDecoder()
             

@@ -23,6 +23,9 @@
 		BA6A7C882A1FC64000F8A4AF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A7C872A1FC64000F8A4AF /* API.swift */; };
 		BA6A7C8B2A1FCB5E00F8A4AF /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A7C8A2A1FCB5E00F8A4AF /* MealListView.swift */; };
 		BA6A7C8D2A1FCB6900F8A4AF /* MealRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A7C8C2A1FCB6900F8A4AF /* MealRowView.swift */; };
+		BA6A7C8F2A1FCE2100F8A4AF /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A7C8E2A1FCE2100F8A4AF /* MealDetailView.swift */; };
+		BA6A7C922A1FD23700F8A4AF /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = BA6A7C912A1FD23700F8A4AF /* URLImage */; };
+		BA6A7C942A1FD23700F8A4AF /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = BA6A7C932A1FD23700F8A4AF /* URLImageStore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,7 @@
 		BA6A7C872A1FC64000F8A4AF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BA6A7C8A2A1FCB5E00F8A4AF /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
 		BA6A7C8C2A1FCB6900F8A4AF /* MealRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRowView.swift; sourceTree = "<group>"; };
+		BA6A7C8E2A1FCE2100F8A4AF /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6A7C942A1FD23700F8A4AF /* URLImageStore in Frameworks */,
+				BA6A7C922A1FD23700F8A4AF /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +198,7 @@
 			children = (
 				BA6A7C8A2A1FCB5E00F8A4AF /* MealListView.swift */,
 				BA6A7C8C2A1FCB6900F8A4AF /* MealRowView.swift */,
+				BA6A7C8E2A1FCE2100F8A4AF /* MealDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +219,10 @@
 			dependencies = (
 			);
 			name = Cookify;
+			packageProductDependencies = (
+				BA6A7C912A1FD23700F8A4AF /* URLImage */,
+				BA6A7C932A1FD23700F8A4AF /* URLImageStore */,
+			);
 			productName = Cookify;
 			productReference = BA6A7C492A1FC3DC00F8A4AF /* Cookify.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +295,9 @@
 				Base,
 			);
 			mainGroup = BA6A7C402A1FC3DC00F8A4AF;
+			packageReferences = (
+				BA6A7C902A1FD23700F8A4AF /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = BA6A7C4A2A1FC3DC00F8A4AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -326,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6A7C8F2A1FCE2100F8A4AF /* MealDetailView.swift in Sources */,
 				BA6A7C7B2A1FC43300F8A4AF /* Meal.swift in Sources */,
 				BA6A7C4F2A1FC3DC00F8A4AF /* ContentView.swift in Sources */,
 				BA6A7C852A1FC53D00F8A4AF /* MealDetailViewModel.swift in Sources */,
@@ -488,10 +503,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Cookify/Cookify.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cookify/Preview Content\"";
-				DEVELOPMENT_TEAM = 7JG9V584J3;
+				DEVELOPMENT_TEAM = 946QG2C7C7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -510,7 +526,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.Cookify;
+				PRODUCT_BUNDLE_IDENTIFIER = io.Cookify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -526,10 +542,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Cookify/Cookify.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cookify/Preview Content\"";
-				DEVELOPMENT_TEAM = 7JG9V584J3;
+				DEVELOPMENT_TEAM = 946QG2C7C7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -548,7 +565,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.Cookify;
+				PRODUCT_BUNDLE_IDENTIFIER = io.Cookify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -688,6 +705,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BA6A7C902A1FD23700F8A4AF /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA6A7C912A1FD23700F8A4AF /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA6A7C902A1FD23700F8A4AF /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		BA6A7C932A1FD23700F8A4AF /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA6A7C902A1FD23700F8A4AF /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA6A7C412A1FC3DC00F8A4AF /* Project object */;
 }

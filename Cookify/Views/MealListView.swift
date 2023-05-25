@@ -13,12 +13,21 @@ struct MealListView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.meals) { meal in
-                MealRowView(meal: meal)
+            Group {
+                if viewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(2)
+                } else {
+                    List(viewModel.meals) { meal in
+                        NavigationLink(destination: MealDetailView(mealId: meal.idMeal ?? "")) {
+                            MealRowView(meal: meal)
+                        }
+                    }
+                }
             }
             .navigationTitle("Dessert Recipes")
-            .navigationBarItems(leading:
-                                    Button(action: {
+            .navigationBarItems(trailing: Button(action: {
                 // handle settings button tap here
             }) {
                 Image(systemName: "gear") // SF Symbol for settings
@@ -29,6 +38,8 @@ struct MealListView: View {
         }
     }
 }
+
+
 
 struct MealListView_Previews: PreviewProvider {
     static var previews: some View {
